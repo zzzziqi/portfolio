@@ -1,5 +1,5 @@
 1. Preparation
    scheme: responsive layout
-   techonology: bootStrap 4.x.x grid
+   techonology: flexible.js rem
 
 2. Initialization

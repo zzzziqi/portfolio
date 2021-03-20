@@ -30,57 +30,60 @@
     <script>
         ScrollReveal({ reset: false });
     </script>
+    <!-- import flexible.js to set font-size of body automatically -->
+    <!-- <script src="js/flexible.js"></script> -->
+
     <!-- using BootStrap 4.x.x for better for better stability and more references -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- maybe using original css and js is a good choice to learn -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
     <!-- import index.css, this css must be under the bootstrap.css because it need to override the properties of bootstrap.css -->
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <!-- Image and text -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="images/logo.png" width="30" height="30"
-                class="d-inline-block align-top" alt="">
+    <!-- nav start -->
+    <nav class="navbar">
+        <a class="nav-logo" href="#"><img width="40" height="40" src="images/Snipaste_2021-03-19_22-11-34.png"
+                alt=""><span>Ziqi Zeng</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button href="#" class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Work <span class="sr-only">(current)</span></a>
+        <div class="nav-con">
+            <ul class="nav-con-left">
+                <li class="nav-item">
+                    <a class="nav-link nav-current " href="#">Work</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Play</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Etc.
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Resume</a>
+                    <a class="nav-link" href="#">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Etc.</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <ul class="nav-con-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-github"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+            </ul>
         </div>
+
     </nav>
-    <div class="container">
+    <!-- nav end -->
+    <div class="container">123</div>
 
-
-    </div>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
