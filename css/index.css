@@ -82,24 +82,33 @@ a {
   text-decoration: none;
   color: #272341;
 }
+a:hover {
+  color: #0065ff;
+}
 
 li {
   list-style: none;
 }
-
+/* In this time, I used prototype with width 1440px as my reference, so I change the the root font size of plugin cssrem to 144 */
 body {
-  width: 100%;
+  min-width: 320px;
+  width: 10rem;
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
+  /* height: 2000px; */
 }
 
 /* nav start */
 .navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   height: 60px;
-  box-shadow: 0px 20px 65px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   padding: 8px 86px;
+  z-index: 1000;
+  background-color: #fff;
 }
 
 .nav-logo {
@@ -117,6 +126,7 @@ body {
   vertical-align: middle;
   margin-right: 33px;
 }
+
 .nav-con {
   display: flex;
   flex: 1;
@@ -125,6 +135,9 @@ body {
 
 .nav-con-left {
   flex: 1;
+}
+.nav-con-left a {
+  display: block;
 }
 .nav-con-right {
   margin-right: -10px;
@@ -163,16 +176,337 @@ body {
   background-color: #272341;
   transition: all 0.3s ease-in;
 }
+/* nav end */
 
 .container {
-  background-color: pink;
+  /* background-color: pink; */
   margin: 0 auto;
+  /* background-color: pink; */
 }
 
+/* hero start */
+.hero {
+  height: 6.25rem;
+  position: relative;
+}
+.bg {
+  position: absolute;
+  width: 2.611111rem;
+  height: 3.138889rem;
+  left: calc(50% - 2.611111rem / 2 + 2.034722rem);
+  top: 0.993056rem;
+  background: linear-gradient(0deg, #0057db 0%, #0089ec 100%);
+  border-radius: 0.138889rem 0.777778rem 0.777778rem 0.777778rem;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+.bg-display {
+  opacity: 1;
+}
+
+.hero-text {
+  position: absolute;
+  width: 4.736111rem;
+  height: 1.486111rem;
+  padding: 0.236111rem 0.291667rem;
+  left: calc(50% - 4.736111rem / 2 - 0.965278rem);
+  top: 1.548611rem;
+  background: #ffffff;
+  box-shadow: 0px 0.138889rem 0.451389rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.173611rem;
+  opacity: 0;
+  transform: translateX(20%);
+  transition: all 0.6s ease-out 0.5s;
+}
+.hero-text-display {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-text h1 {
+  font-family: Montserrat;
+  font-weight: normal;
+  font-size: 0.333333rem;
+  color: #272341;
+}
+
+.hero-text span {
+  color: #0065ff;
+}
+
+.hero-image {
+  position: absolute;
+  width: 2.791667rem;
+  height: 3.694444rem;
+  left: calc(50% - 2.611111rem / 2 + 1.854167rem);
+  top: 1.548611rem;
+  transform: translateX(30%) rotate(10deg);
+  transition: all 0.5s ease-out;
+  opacity: 0;
+
+  filter: drop-shadow(0 0.034722rem 0.069444rem rgba(0, 0, 0, 0.3));
+}
+.hero-image-display {
+  transform: translateX(0);
+  opacity: 1;
+}
+.brief {
+  opacity: 0;
+  transform: translateX(-5%);
+  transition: all 0.3s ease 1.8s;
+}
+.brief h4 {
+  font-size: 0.291667rem;
+  font-weight: 600;
+  margin-bottom: 0.208333rem;
+}
+.brief p {
+  padding-bottom: 0.208333rem;
+  font-size: 0.194444rem;
+  line-height: 2;
+  margin-bottom: 0.555556rem;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 0.347222rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.scroll-down a {
+  display: block;
+  width: 0.361111rem;
+  height: 0.361111rem;
+  border-radius: 50%;
+  line-height: 0.361111rem;
+  text-align: center;
+  font-size: 0.208333rem;
+}
+
+.text-animation {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.scroll-down a i {
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  animation: arrow-animation 0.5s ease-in infinite alternate;
+}
+
+@keyframes arrow-animation {
+  from {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/* hero end */
+
+/* Project Start */
+/* because I will use the css grid feature, so there are some compatibility issues for old version browsers.
+ */
+.project h4 {
+  font-size: 0.291667rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.208333rem;
+}
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.111111rem;
+}
+.project-container .project-item {
+  position: relative;
+  overflow: hidden;
+  /* background: pink; */
+  height: 200px;
+  border-radius: 25px;
+  box-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.07);
+  /* transition: all 0.3s ease; */
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+  /* opacity 0.2s ease-out; */
+}
+.project-container .project-item:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translate(0, -4px);
+}
+.project-container .project-item:first-child {
+  grid-column: span 3;
+  grid-row: span 4;
+  height: auto;
+}
+.project-container .project-item:nth-child(n + 2) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.project-container .project-item:nth-child(4) {
+  grid-column: span 2;
+}
+.project-container .project-item:nth-child(5) {
+  grid-column: span 3;
+}
+.project-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* setting the effect of hovering, it is easier than using JS */
+
+.project-item a .mask,
+.project-item a img {
+  transition: all 0.5s ease;
+}
+.project-item a h6 {
+  line-height: 150%;
+  z-index: 999;
+}
+.project-item:nth-child(-n + 4) a:hover span.mask {
+  opacity: 0;
+}
+.project-item:nth-child(-n + 4) a:hover img {
+  filter: none;
+}
+
+.project-item .mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(115, 115, 115, 0.6) 100%
+  );
+}
+
+.project-item img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
+.project-item a .drone {
+  top: 65px;
+  right: -7px;
+  width: 172px;
+  height: auto;
+}
+.project-item a .drone,
+.project-item a .drone-base {
+  display: none;
+}
+.project-item a:hover .drone-base {
+  display: block;
+}
+.project-item a:hover .drone {
+  display: block;
+  animation: 3s ease-in-out 0.3s infinite alternate fly;
+  z-index: 999;
+}
+@keyframes fly {
+  0% {
+    transform: translate(0, 0);
+  }
+  40% {
+    transform: translate(-25px, -66px);
+  }
+  60% {
+    transform: translate(-25px, -60px);
+  }
+  80% {
+    transform: translate(-25px, -66px);
+  }
+  100% {
+    transform: translate(-25px, -60px);
+  }
+  /* 100% {
+    transform: translate(0, 0);
+  } */
+}
+
+.project-item a h6 {
+  margin-left: 0.243056rem;
+}
+
+.project-item a h6:nth-child(1) {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-125%);
+  font-weight: 400;
+  padding: 6px 15px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #0057db 0%, #0089ec 100%);
+}
+.project-item a h6:nth-child(2) {
+  font-weight: 400;
+  position: absolute;
+  padding-left: 10px;
+  top: 50%;
+  width: 50%;
+  height: 0.625rem;
+  /* font-size: 0.146667rem; */
+  color: #fff;
+}
+
+.project-item:last-child a h6:first-child {
+  background: linear-gradient(90deg, #737373 0%, rgba(115, 115, 115, 0.8) 100%);
+}
+
+.gray {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+
+  filter: grayscale(100%);
+
+  filter: gray;
+}
+/* Project End */
+
+/* Connect Start */
+.connect {
+  margin-top: 0.833333rem;
+  margin-bottom: 0.444444rem;
+}
+.connect h4 {
+  font-size: 0.291667rem;
+  margin-bottom: 0.208333rem;
+}
+.connect p {
+  font-size: 0.194444rem;
+  line-height: 2;
+}
+
+.connect a {
+  color: #0065ff;
+}
+.connect > a {
+  display: none;
+}
+
+.connect small {
+  display: block;
+  margin-top: 0.347222rem;
+  font-size: 14px;
+}
+/* Connect End */
+
 /* using media to fit every screen dynamically */
+/* In this time, I used prototype with width 374px as my reference, so I change the the root font size of plugin cssrem to 37.4 */
+
 @media screen and (max-width: 767px) {
-  .nav-logo span {
-    display: none;
+  /* nav start */
+  .nav-logo img {
+    margin-right: 20px;
+    z-index: 100;
   }
   .nav-logo,
   .burger {
@@ -261,25 +595,227 @@ body {
       opacity: 0;
     }
   }
+  /* nav end */
+
   .container {
     width: 100%;
   }
+  .hero-text {
+    position: absolute;
+    width: 8.266667rem;
+    height: 2.293333rem;
+    left: calc(50% - 8.266667rem / 2);
+    top: 3.04rem;
+
+    box-shadow: 0px 0.533333rem 1.733333rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.666667rem;
+  }
+  .bg {
+    position: absolute;
+    width: 8.266667rem;
+    height: 8.346667rem;
+    left: calc(50% - 8.266667rem / 2);
+    top: 3.04rem;
+    border-radius: 1.52rem 1.813333rem 0.64rem 2.773333rem;
+  }
+  .hero {
+    height: 14.666667rem;
+  }
+  .hero-text h1 {
+    font-size: 0.534759rem;
+  }
+  .hero-image {
+    position: absolute;
+    width: 6.906667rem;
+    height: 9.146667rem;
+    left: 3.093333rem;
+    top: 4.986667rem;
+  }
+  .scroll-down a {
+    display: none;
+  }
+
+  .brief {
+    width: 8.96rem;
+    margin: 0 auto 2rem;
+  }
+  .brief h4 {
+    font-size: 0.64rem;
+  }
+  .brief p {
+    font-size: 0.533333rem;
+  }
+
+  /* Project start */
+  .project {
+    width: 8.96rem;
+    margin: 0 auto 2rem;
+  }
+  .project h4 {
+    font-size: 0.64rem;
+  }
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .project-container .project-item:nth-child(n) {
+    height: 400px;
+    /* background-color: purple; */
+  }
+  .project-item {
+    margin-top: 10px;
+  }
+
+  .project-item img {
+    height: auto;
+    width: 100%;
+  }
+  .project-item:nth-child(n + 4) img {
+    height: 100%;
+    width: auto;
+  }
+  .project-item:nth-child(4) .drone {
+    top: 132px;
+    right: -10px;
+    width: 330px;
+    height: auto;
+  }
+
+  /* Project end */
+
+  /* Connect start */
+  .connect {
+    width: 8.96rem;
+    margin: 0 auto;
+  }
+  .connect h4 {
+    font-size: 0.64rem;
+    width: 8.96rem;
+    margin: 0 auto;
+  }
+  .connect p {
+    font-size: 0.533333rem;
+    margin-bottom: 1.333333rem;
+  }
+  .connect > a {
+    color: #272341;
+    display: block;
+    text-align: center;
+  }
+  .connect .fa-chevron-up::before {
+    color: #0065ff;
+  }
+  .connect i p {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.373333rem;
+  }
+  .connect .fa-chevron-up::before {
+    display: block;
+  }
+  .connect small {
+    text-align: center;
+    margin-top: 0.8rem;
+    margin-bottom: 0.533333rem;
+  }
+
+  /* Connect end */
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 650px;
+  }
+  .project-item img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: auto;
+    height: 100%;
+  }
+  .project-item:last-child img {
+    width: 100%;
+    height: auto;
+  }
+  .project-item a h6 {
+    font-size: 16px;
   }
 }
 
 @media screen and (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 850px;
+  }
+  .project-item img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+  }
+  .project-item:nth-child(4) img {
+    width: auto;
+    height: 100%;
+  }
+  .project-item:nth-child(4) .drone {
+    top: 64px;
+    right: -6px;
+    width: 170px;
+    height: auto;
+  }
+
+  .project-item a h6 {
+    font-size: 18px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1070px;
+  }
+  .project-item:nth-child(4) img {
+    height: auto;
+    width: 100%;
+  }
+  .project-item:nth-child(4) .drone {
+    top: 76px;
+    right: -7px;
+    width: 196px;
+    height: auto;
+  }
+}
+
+/* adding other media query to adjust my picture (may adjust my pictures as the same size can reduce the amount of CSS code for responsive website) */
+@media screen and (max-width: 640px) {
+  .project-item img {
+    height: 100%;
+    width: auto;
+  }
+  .project-item:nth-child(1) img {
+    height: auto;
+    width: 100%;
+  }
+  .project-item:nth-child(3) img {
+    height: auto;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .project-item:nth-child(1) img {
+    height: auto;
+    width: 100%;
+  }
+  .project-item:nth-child(3) img {
+    height: 100%;
+    width: auto;
+  }
+}
+@media screen and (max-width: 520px) {
+  .project-item:nth-child(1) img {
+    height: 100%;
+    width: auto;
   }
 }

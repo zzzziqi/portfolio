@@ -1,0 +1,342 @@
+/* initialization */
+a,
+abbr,
+acronym,
+address,
+applet,
+b,
+big,
+blockquote,
+body,
+button,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+title,
+tr,
+tt,
+u,
+ul,
+var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #272341;
+}
+
+a:hover {
+  color: #0065ff;
+}
+
+li {
+  list-style: none;
+}
+
+/* In this time, I used prototype with width 1440px as my reference, so I change the the root font size of plugin cssrem to 144 */
+body {
+  min-width: 320px;
+  width: 10rem;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  /* height: 2000px; */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  padding: 8px 86px;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.navbar .nav-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 43px;
+  text-transform: uppercase;
+  z-index: 100;
+}
+
+.navbar .nav-logo img {
+  vertical-align: middle;
+  margin-right: 33px;
+}
+
+.navbar .nav-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.navbar .nav-con .nav-con-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .nav-con .nav-con-left a {
+  display: block;
+}
+
+.navbar .nav-con .nav-con-left .nav-current {
+  color: #0065ff;
+}
+
+.navbar .nav-con .nav-con-right {
+  margin-left: auto;
+  margin-right: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .nav-con .nav-con-right .nav-link {
+  margin-left: 10px;
+}
+
+.navbar .nav-con .nav-con-right .nav-link i {
+  font-size: 20px;
+}
+
+.navbar .nav-con .nav-link {
+  font-size: 14px;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.navbar .burger {
+  margin-right: -4px;
+  display: none;
+}
+
+.navbar .burger div {
+  width: 25px;
+  height: 3px;
+  margin: 6px;
+  border-radius: 1.5px;
+  background-color: #272341;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 8px 14px;
+  }
+  .navbar .nav-logo img {
+    margin-right: 20px;
+    z-index: 100;
+  }
+  .navbar .burger {
+    margin-left: auto;
+    z-index: 100;
+    display: block;
+    cursor: pointer;
+  }
+  .navbar .burger-toggle .line1 {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: translateY(4.5px) rotate(-45deg);
+            transform: translateY(4.5px) rotate(-45deg);
+  }
+  .navbar .burger-toggle .line2 {
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: translateY(-4.5px) rotate(45deg);
+            transform: translateY(-4.5px) rotate(45deg);
+  }
+  .navbar .nav-con {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.15);
+    -webkit-transform: translateY(-260px);
+            transform: translateY(-260px);
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .navbar .nav-con .nav-con-left {
+    -webkit-box-flex: 80%;
+        -ms-flex: 80%;
+            flex: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .navbar .nav-con .nav-con-left a {
+    display: block;
+    height: 40px;
+  }
+  .navbar .nav-con .nav-con-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 20%;
+        -ms-flex: 20%;
+            flex: 20%;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+  .navbar .nav-con .nav-con-right .nav-link {
+    margin: 0;
+    line-height: 40px;
+  }
+  .navbar .nav-con .nav-item {
+    opacity: 0;
+  }
+  .navbar .nav-con-toggle {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  @-webkit-keyframes text-animation-in {
+    from {
+      opacity: 0;
+      -webkit-transform: translateY(-30px);
+              transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  @keyframes text-animation-in {
+    from {
+      opacity: 0;
+      -webkit-transform: translateY(-30px);
+              transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes text-animation-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes text-animation-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
+/*# sourceMappingURL=nicknameCall.css.map */

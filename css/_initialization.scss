@@ -1,0 +1,100 @@
+/* initialization */
+a,
+abbr,
+acronym,
+address,
+applet,
+b,
+big,
+blockquote,
+body,
+button,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+title,
+tr,
+tt,
+u,
+ul,
+var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #272341;
+  &:hover {
+    color: #0065ff;
+  }
+}
+
+li {
+  list-style: none;
+}
+/* In this time, I used prototype with width 1440px as my reference, so I change the the root font size of plugin cssrem to 144 */
+body {
+  min-width: 320px;
+  width: 10rem;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  /* height: 2000px; */
+}
