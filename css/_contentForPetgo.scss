@@ -1,0 +1,355 @@
+.content {
+  .whyDesign {
+    padding: 100px 0.555556rem;
+    background-color: #f4f4f4;
+    img {
+      width: 100%;
+    }
+  }
+  .introduction {
+    padding: 100px 0.555556rem;
+    background-color: #fff;
+    h4 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 16px;
+    }
+
+    .intro-bottom {
+      width: 100%;
+      position: relative;
+      p {
+        padding-bottom: 20px;
+      }
+      h5 {
+        margin-top: 32px;
+        font-size: 24px;
+      }
+      img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .respondents {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        li {
+          background-color: #ceedf4;
+          padding: 12px;
+          width: 24%;
+          font-size: 16px;
+        }
+      }
+      .competitive {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        img {
+          width: 49%;
+        }
+      }
+    }
+  }
+
+  .persona {
+    background-color: #f4f4f4;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    h4,
+    h5,
+    h6,
+    p {
+      padding: 0 0.555556rem;
+    }
+    h4 {
+      // margin-bottom: 12px;
+      font-size: 30px;
+    }
+    h5 {
+      margin-top: 32px;
+      font-size: 24px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+  .implement {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    h4,
+    h5,
+    h6,
+    p {
+      padding: 0 0.555556rem;
+    }
+    h4 {
+      font-size: 30px;
+    }
+    h5 {
+      margin-top: 32px;
+      font-size: 24px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      margin-bottom: 114px;
+    }
+    .system-map {
+      margin-top: 40px;
+      width: 60%;
+    }
+    .blueprint {
+      padding-bottom: 20px;
+    }
+  }
+  .analysis {
+    // background-color: #f4f4f4;
+    padding: 0.366667rem 0.555556rem;
+
+    h4 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 16px;
+      margin-top: 12px;
+    }
+    img {
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+  .conceptualIdea {
+    margin: 90px 0.555556rem 200px;
+    position: relative;
+    h4 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+    p {
+      &:first-of-type {
+        margin-bottom: 0.625rem;
+      }
+      width: 48%;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    img {
+      width: 40%;
+      position: absolute;
+      top: 40px;
+      right: 0;
+    }
+  }
+  .conceptualSketch {
+    background: #f4f4f4;
+    h4 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+    padding: 0.366667rem 0.555556rem;
+    img {
+      margin-top: 90px;
+      width: 100%;
+    }
+  }
+  .hifi-interfaces {
+    position: relative;
+    h4 {
+      font-size: 30px;
+      padding-bottom: 38px;
+    }
+    padding: 0.366667rem 0.555556rem 186px;
+    width: 100vw;
+    .interface1 {
+      margin-bottom: 100px;
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      video {
+        width: 40%;
+      }
+      .phone-text {
+        h4,
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        h4 {
+          font-weight: 700;
+        }
+        padding-left: 10%;
+        padding-top: 100px;
+      }
+    }
+    .interface2 {
+      margin-bottom: 100px;
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      video {
+        width: 40%;
+      }
+      .phone-text {
+        h4,
+        p {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        h4 {
+          font-weight: 700;
+        }
+        padding-right: 10%;
+        padding-top: 100px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .content {
+    p {
+      font-weight: 300;
+    }
+    .introduction {
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      h4 {
+        font-size: 24px;
+      }
+      .intro-bottom,
+      .intro-left,
+      .intro-right {
+        width: 100%;
+        position: relative;
+      }
+      .intro-right {
+        top: 0;
+        right: 0;
+        img {
+          vertical-align: middle;
+        }
+        padding-bottom: 48px;
+      }
+      .intro-bottom {
+        top: 0;
+        img {
+          margin-top: 0;
+        }
+        .respondents {
+          flex-direction: column;
+          li {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 20px;
+          }
+        }
+        .competitive {
+          flex-direction: column;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      height: auto;
+      // display: flex;
+      // flex-direction: column;
+    }
+    .hmw {
+      height: 125px;
+      padding: 0.653333rem 32px;
+
+      em,
+      p {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: #fff;
+        font-weight: 700;
+        font-size: 18px;
+        -webkit-text-stroke: 0px #fff;
+      }
+    }
+    .persona {
+      padding-top: 48px;
+      h4 {
+        font-size: 24px;
+      }
+      img {
+        margin-bottom: 40px;
+      }
+    }
+    .analysis {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      h4 {
+        font-size: 24px;
+      }
+    }
+    .conceptualIdea {
+      margin-top: 48px;
+      margin-bottom: 60px;
+      p {
+        margin: 0;
+        width: 100%;
+      }
+      img {
+        position: relative;
+        width: 100%;
+      }
+    }
+    .conceptualSketch {
+      padding-top: 48px;
+      padding-bottom: 0px;
+      img {
+        margin-top: 10px;
+        margin-bottom: 62px;
+      }
+    }
+    .hifi-interfaces {
+      padding-top: 48px;
+      padding-bottom: 0;
+      h4 {
+        padding-bottom: 12px;
+      }
+      .interface1 {
+        flex-direction: column-reverse;
+        margin-bottom: 80px;
+        .phone-text {
+          padding: 0 0 32px;
+        }
+        video {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+      .interface2 {
+        flex-direction: column;
+        margin-bottom: 80px;
+        .phone-text {
+          padding: 0 0 32px;
+        }
+        video {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

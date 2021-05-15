@@ -1,0 +1,20 @@
+.bg-info {
+  background: #5bb287;
+  //   height: 3.236111rem;
+  padding: 0.366667rem 0.555556rem;
+  padding-bottom: 60px;
+  color: #fff;
+  h4 {
+    font-size: 30px;
+  }
+  p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    &:nth-child(2) {
+      margin-bottom: 0.347222rem;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
