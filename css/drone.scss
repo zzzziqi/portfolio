@@ -1,0 +1,41 @@
+// Learning about how to use Sass
+// 1. using suffix name "scss"
+// 2. creating variable     $name : value , when using valuables $name
+// primaryBtn textColor
+// 3. nesting the child element (more logical)
+// 4. when need to use pseudo class(:hover) or pseudo element(::after), using &:hover &::after
+// 5. create multiple sass documents to manage the css document like _nav.scss, _header.scss _variables.scss
+// it need to be import   (@import './header')(don't need _ and extension when importing)
+// 6. function  @mixin name {}
+// when it need to be used  @include name();
+// 7. when we need to change some propeties in function, we can add a parenthese and add parameter     @mixin name($name) {propertyName: $name}
+// 8. inheritance   @extend selectorName， if want to overwite just wirte the style below the extend.
+// 9. calculation + - * /
+
+// In the beginning, I only used CSS to do the style part. But there are some ptoblems
+// 1. The document is too long to find stuff quickly
+// 2. There are too many duplicate code in the index.css
+// 3. In practice, it requires a lot of code to be compatible with multiple broswers, which will spend a lot of time to adjust it.
+
+// So I try to use CSS extension language, Sass, to help me solve these problems above.
+// I will use Sass in my projects details pages
+
+@import "./initialization";
+@import "./nav";
+@import "./heroForDrone";
+@import "./bg-infoForDrone";
+@import "./contentForFamily";
+@import "./more-projectsForPetgo";
+@import "./connect";
+
+.more-projects {
+  h4 {
+    color: #333;
+  }
+  background: #ffdc6c;
+}
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 30px;
+  }
+}

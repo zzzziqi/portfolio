@@ -1,0 +1,126 @@
+.content {
+  .whyDesign {
+    padding: 100px 0.555556rem;
+    background-color: #f4f4f4;
+    img {
+      width: 100%;
+    }
+  }
+  .introduction {
+    padding: 100px 0.555556rem;
+    background-color: #fff;
+    h4 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 16px;
+    }
+
+    .intro-top {
+      display: flex;
+      img {
+        width: 40%;
+        height: auto;
+        margin-left: 10%;
+      }
+      margin-bottom: 70px;
+    }
+    .intro-bottom {
+      width: 100%;
+      position: relative;
+      p {
+        padding-bottom: 20px;
+      }
+      h4 {
+        margin-top: 100px;
+        margin-bottom: 20px;
+      }
+      h5 {
+        margin-top: 32px;
+        font-size: 24px;
+      }
+      h6 {
+        margin-bottom: 12px;
+      }
+      img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .problems {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        li {
+          padding: 12px;
+          width: 24%;
+          font-size: 16px;
+        }
+      }
+      .ideations {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li {
+          width: 48%;
+          font-size: 16px;
+          img {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .content {
+    p {
+      font-weight: 300;
+    }
+    .introduction {
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      h4 {
+        font-size: 24px;
+      }
+      .intro-top {
+        flex-direction: column;
+        img {
+          width: 100%;
+          margin: 0;
+        }
+      }
+      .intro-bottom {
+        width: 100%;
+        position: relative;
+        top: 0;
+        img {
+          margin-top: 0;
+        }
+        .problems {
+          flex-direction: column;
+          flex-wrap: wrap;
+          li {
+            align-self: center;
+            width: 100%;
+            padding: 0;
+            img {
+              margin-bottom: 0;
+            }
+          }
+        }
+        .ideations {
+          li {
+            width: 100%;
+          }
+        }
+        .persona1,
+        .persona2 {
+          margin-bottom: 30px;
+        }
+      }
+      height: auto;
+    }
+  }
+}

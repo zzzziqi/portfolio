@@ -115,6 +115,7 @@ navSlide();
 // using the library named "medium-zoom" to implement image zoom in and zoom out
 mediumZoom(".popup", {
   margin: 20,
+  scrollOffset: 200,
 });
 
 // implementing the function of “back to top”

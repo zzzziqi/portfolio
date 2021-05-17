@@ -28,6 +28,8 @@
           top: 20%;
           left: 10%;
           color: #fff;
+          font-weight: 300;
+
           width: 50%;
           &:first-child {
             background: linear-gradient(90deg, #0057db 0%, #0089ec 100%);
@@ -145,7 +147,7 @@
         a {
           h6 {
             &:first-child {
-              top: 40px;
+              top: 36px;
             }
           }
         }
