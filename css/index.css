@@ -225,8 +225,8 @@ body {
 }
 
 .hero-text h1 {
-  font-family: Montserrat;
-  font-weight: normal;
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-weight: 600;
   font-size: 0.333333rem;
   color: #272341;
 }
