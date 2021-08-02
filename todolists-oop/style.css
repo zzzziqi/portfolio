@@ -1,0 +1,440 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+em {
+  font-style: normal;
+}
+
+body {
+  background: #2948ff;
+  background: -webkit-gradient(linear, left top, right top, from(#396afc), to(#2948ff));
+  background: linear-gradient(to right, #396afc, #2948ff);
+  -webkit-tap-highlight-color: transparent;
+}
+
+i,
+svg {
+  pointer-events: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 200px;
+}
+
+.todo-container .title {
+  margin-top: 100px;
+  min-width: 320px;
+  max-width: 700px;
+  width: 80vw;
+  position: relative;
+}
+
+.todo-container .title .inspiration {
+  margin-top: 40px;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.todo-container .title h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.todo-container .title h1 em {
+  font-weight: 700;
+}
+
+.todo-container .title h3 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.6rem;
+  margin-top: 12px;
+}
+
+.todo-container .title .more-option {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.todo-container .title .more-option:hover {
+  background: #d6d6d6;
+}
+
+.todo-container .title .more-option .more-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2px;
+}
+
+.todo-container .title .more-option .more-icon li {
+  width: 5px;
+  height: 5px;
+  background: #2948ff;
+  border-radius: 50%;
+}
+
+.todo-container .adding {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 14px;
+  margin-top: 40px;
+  height: 46px;
+  min-width: 320px;
+  max-width: 700px;
+  width: 80vw;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.todo-container .adding input {
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  color: #1d1d1d;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-weight: 300;
+  caret-color: #1d1d1d;
+}
+
+.todo-container .adding input::-webkit-input-placeholder {
+  color: #808080;
+}
+
+.todo-container .adding .adding-icon {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  color: #2948ff;
+  cursor: pointer;
+}
+
+.todo-container .adding .adding-icon:hover {
+  color: #1d36c7;
+}
+
+.todo-container .progress {
+  min-width: 320px;
+  max-width: 700px;
+  width: 80vw;
+  text-align: center;
+  color: #fff;
+}
+
+.todo-container .progress .progress-external-bar {
+  height: 1.2rem;
+  border-radius: 0.6rem;
+  width: 100%;
+  background: #fff;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0.3rem;
+  margin-bottom: 6px;
+}
+
+.todo-container .progress .progress-external-bar::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 0.8rem;
+  background: #2948ff;
+  border-radius: 0.4rem;
+}
+
+.todo-container .todo-lists,
+.todo-container .completed {
+  margin-top: 24px;
+  min-width: 320px;
+  max-width: 700px;
+  width: 80vw;
+}
+
+.todo-container .todo-lists .todo-lists-title,
+.todo-container .todo-lists .completed-title,
+.todo-container .completed .todo-lists-title,
+.todo-container .completed .completed-title {
+  height: 20px;
+  width: 100px;
+  background: #fff;
+  border-radius: 10px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.todo-container .todo-lists .todo-list,
+.todo-container .completed .todo-list {
+  position: relative;
+  min-width: 320px;
+  max-width: 700px;
+  width: 80vw;
+  height: 46px;
+  background: #fff;
+  margin-top: 8px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 14px;
+}
+
+.todo-container .todo-lists .todo-list .tick,
+.todo-container .completed .todo-list .tick {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  border: 4px solid #2948ff;
+  border-radius: 13px;
+  background: transparent;
+}
+
+.todo-container .todo-lists .todo-list p,
+.todo-container .todo-lists .todo-list input,
+.todo-container .completed .todo-list p,
+.todo-container .completed .todo-list input {
+  padding-left: 20px;
+  padding-right: auto;
+  font-size: 1.2rem;
+  color: #1d1d1d;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todo-container .todo-lists .todo-list input,
+.todo-container .completed .todo-list input {
+  outline: 2px solid #203bd4;
+  padding-left: 6px;
+  margin-left: 14px;
+  border: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.todo-container .todo-lists .todo-list .countdown-container,
+.todo-container .completed .todo-list .countdown-container {
+  position: absolute;
+  right: 130px;
+  width: 10rem;
+  height: 2rem;
+  overflow: hidden;
+}
+
+.todo-container .todo-lists .todo-list .countdown-container .countdown,
+.todo-container .completed .todo-list .countdown-container .countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(110%);
+          transform: translateX(110%);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background: #2948ff;
+  border-radius: 6px;
+}
+
+.todo-container .todo-lists .todo-list .countdown-container .countdown button,
+.todo-container .completed .todo-list .countdown-container .countdown button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #fff;
+}
+
+.todo-container .todo-lists .todo-list .countdown-container .countdown .clock-timer,
+.todo-container .completed .todo-list .countdown-container .countdown .clock-timer {
+  line-height: 2rem;
+  color: #fff;
+}
+
+@media (max-width: 430px) {
+  .todo-container .todo-lists .todo-list .countdown-container,
+  .todo-container .completed .todo-list .countdown-container {
+    width: 9rem;
+  }
+}
+
+.todo-container .todo-lists .todo-list .clock,
+.todo-container .todo-lists .todo-list .trash,
+.todo-container .completed .todo-list .clock,
+.todo-container .completed .todo-list .trash {
+  cursor: pointer;
+  background: transparent;
+  color: #8d8d8d;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 20px;
+  border: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.todo-container .todo-lists .todo-list .clock:hover,
+.todo-container .completed .todo-list .clock:hover {
+  color: #2948ff;
+}
+
+.todo-container .todo-lists .todo-list .trash:hover,
+.todo-container .completed .todo-list .trash:hover {
+  color: #f09937;
+}
+
+.todo-container .todo-lists {
+  display: none;
+}
+
+.todo-container .completed {
+  display: none;
+}
+
+.todo-container .completed .todo-list .tick {
+  color: #808080;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  border: none;
+}
+
+.todo-container .completed .todo-list p {
+  color: #808080;
+  font-weight: 300;
+}
+
+.todo-container .delete-list-warning {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.todo-container .delete-list-warning .panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.todo-container .delete-list-warning .panel h6 {
+  font-size: 1rem;
+  width: 80%;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.todo-container .delete-list-warning .panel p {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.todo-container .delete-list-warning .panel .warnig-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 210px;
+}
+
+.todo-container .delete-list-warning .panel .warnig-control button {
+  cursor: pointer;
+  border-radius: 6px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  background: #d8d8d8;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.todo-container .delete-list-warning .panel .warnig-control button:hover {
+  background: #c9c9c9;
+}
+
+.todo-container .delete-list-warning .panel .warnig-control button:nth-child(2) {
+  background: #2948ff;
+  color: #fff;
+}
+
+.todo-container .delete-list-warning .panel .warnig-control button:nth-child(2):hover {
+  background: #203bd4;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="todo-container">
+        <div class="title">
+
+            <h1>Hello, <em>Ziqi</em></h1>
+            <h3 class="date">Wednesday 28th July</h3>
+            <h1 class="inspiration"></h1>
+            <!-- <button class="more-option">
+                <ul class="more-icon">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </button> -->
+        </div>
+        <div class="adding">
+            <button class="adding-icon"><i class="fas fa-plus"></i></button>
+            <input type="text" placeholder="Add a todo list" maxlength="30" spellcheck="false"></input>
+        </div>
+        <!-- <div class="progress">
+            <div class="progress-external-bar">
+            </div>
+            <p class="progress-text">I’m making progress!</p>
+        </div> -->
+
+
+        <div class="todo-lists">
+            <h5 class="todo-lists-title">To do lists</h5>
+            <ul class="todo-list-container">
+            </ul>
+        </div>
+
+        <div class="completed">
+            <h5 class="completed-title">Completed</h5>
+            <ul class="completed-container">
+            </ul>
+        </div>
+        <div class="delete-list-warning">
+            <div class="panel">
+                <h6></h6>
+                <p>You won't be able to undo this action.</p>
+                <div class="warnig-control">
+                    <button class="cancel">cancel</button>
+                    <button class="confirm-delete">Delete list</button>
+                </div>
+            </div>
+        </div>
+        <audio src="./audio/finish.wav" class="prompt"></audio>
+        <audio src="./audio/clock alarm.wav" class="timesup"></audio>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

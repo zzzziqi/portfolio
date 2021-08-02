@@ -377,10 +377,10 @@ body {
   line-height: 150%;
   z-index: 999;
 }
-.project-item:nth-child(-n + 4) a:hover span.mask {
+.project-item:nth-child(-n + 5) a:hover span.mask {
   opacity: 0;
 }
-.project-item:nth-child(-n + 4) a:hover img {
+.project-item:nth-child(-n + 5) a:hover img {
   filter: none;
 }
 
@@ -444,6 +444,7 @@ body {
 
 .project-item a h6 {
   margin-left: 0.243056rem;
+  margin-right: 0.243056rem;
 }
 
 .project-item a h6:nth-child(1) {
@@ -460,15 +461,20 @@ body {
   font-weight: 400;
   position: absolute;
   padding-left: 10px;
+  padding-right: 10px;
   top: 50%;
   width: 50%;
-  height: 0.625rem;
-  /* font-size: 0.146667rem; */
+  /* height: 0.625rem; */
+
   color: #fff;
+}
+.project-item a:hover h6:nth-child(2) {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
 }
 
 .project-item:last-child a h6:first-child {
-  background: linear-gradient(90deg, #737373 0%, rgba(115, 115, 115, 0.8) 100%);
+  background: linear-gradient(90deg, #0057db 0%, #0089ec 100%);
 }
 
 .gray {
@@ -687,14 +693,20 @@ body {
   .project-item:nth-child(n + 4) img {
     height: 100%;
     width: auto;
+    object-fit: cover;
   }
+  .project-item:nth-child(5) img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
   .project-item:nth-child(4) .drone {
     top: 132px;
     right: -10px;
     width: 330px;
     height: auto;
   }
-
   /* Project end */
 
   /* Connect start */
@@ -747,6 +759,11 @@ body {
     z-index: -1;
     width: auto;
     height: 100%;
+  }
+  .project-item:nth-child(-n + 2) a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .project-item:last-child img {
     width: 100%;
@@ -807,13 +824,10 @@ body {
     height: 100%;
     width: auto;
   }
-  .project-item:nth-child(1) img {
-    height: auto;
+  .project-item:nth-child(-n + 3) a img {
     width: 100%;
-  }
-  .project-item:nth-child(3) img {
-    height: auto;
-    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 @media screen and (max-width: 600px) {
@@ -827,8 +841,11 @@ body {
   }
 }
 @media screen and (max-width: 520px) {
-  .project-item:nth-child(1) img {
+  .project-item:nth-child(-n + 2) a img {
     height: 100%;
+    object-fit: cover;
+  }
+  .project-item a h6:nth-child(2) {
     width: auto;
   }
 }
