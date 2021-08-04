@@ -442,6 +442,7 @@ window.addEventListener("resize", () => {
 let player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
+    autoplay: 0,
     height: "360",
     width: "640",
     videoId: "5qap5aO4i9A",
@@ -450,6 +451,7 @@ function onYouTubeIframeAPIReady() {
       iv_load_policy: 3,
       modestbranding: 1,
       color: "white",
+      playsinline: "1",
     },
     events: {
       onReady: onPlayerReady,
@@ -460,7 +462,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-  event.target.playVideo();
+  // event.target.playVideo();
 }
 
 function onPlayerStateChange(event) {

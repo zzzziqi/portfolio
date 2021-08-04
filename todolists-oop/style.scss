@@ -89,6 +89,7 @@ ul {
       }
     }
     .music {
+      outline: none;
       top: 15px;
       border-radius: 15px;
       background: #fff;
@@ -105,6 +106,8 @@ ul {
       }
     }
     .active {
+      outline: none;
+
       background: #2948ff;
       color: #fff;
     }
