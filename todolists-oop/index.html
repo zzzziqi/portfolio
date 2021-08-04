@@ -15,11 +15,21 @@
 
 <body>
     <div class="todo-container">
-        <div class="title">
 
+        <!-- <iframe width="560px" height="315px" min-width="320px" max-width="700px" class="music-video"
+            onclick="onPlayerStateChange()" src="https://www.youtube-nocookie.com/embed/5qap5aO4i9A?"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe> -->
+        <div id="player" class="music-video"></div>
+        <div class="title">
             <h1>Hello, <em>Ziqi</em></h1>
             <h3 class="date"></h3>
             <h1 class="inspiration"></h1>
+            <button class="music"><i class="fas fa-music"></i>
+                <div class="shadow"></div>
+                <div class="shadow"></div>
+            </button>
             <!-- <button class="more-option">
                 <ul class="more-icon">
                     <li></li>
@@ -63,6 +73,7 @@
         <audio src="./audio/finish.wav" class="prompt"></audio>
         <audio src="./audio/clock alarm.wav" class="timesup"></audio>
     </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="app.js"></script>
 </body>
 

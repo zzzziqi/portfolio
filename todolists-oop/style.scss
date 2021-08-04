@@ -34,17 +34,18 @@ ul {
   flex-direction: column;
   align-items: center;
   padding-bottom: 200px;
+  padding-top: 100px;
+  .music-video {
+    display: none;
+    margin-bottom: 2rem;
+  }
   .title {
-    margin-top: 100px;
     @include allWidth;
     position: relative;
     .inspiration {
       margin-top: 40px;
       font-size: 1.8rem;
       font-weight: 400;
-      //   padding-right: 40px;
-      //   height: 50px;
-      //   text-align: center;
     }
     h1 {
       font-size: 3rem;
@@ -61,7 +62,8 @@ ul {
       font-size: 1.6rem;
       margin-top: 12px;
     }
-    .more-option {
+    .more-option,
+    .music {
       width: 30px;
       height: 30px;
       position: absolute;
@@ -84,6 +86,60 @@ ul {
           background: #2948ff;
           border-radius: 50%;
         }
+      }
+    }
+    .music {
+      top: 15px;
+      border-radius: 15px;
+      background: #fff;
+      color: #2948ff;
+      .shadow {
+        background: rgba(255, 255, 255, 0.2);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        border-radius: 15px;
+      }
+    }
+    .active {
+      background: #2948ff;
+      color: #fff;
+    }
+    .active i {
+      animation: 3s linear 0s infinite rotation;
+    }
+    .active .shadow {
+      animation: 1s ease-in-out 0s infinite alternate playEffect;
+    }
+    .active .shadow:last-child {
+      animation: 1s ease-in-out 0s infinite alternate playEffect2;
+    }
+
+    @keyframes rotation {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes playEffect {
+      from {
+        transform: scale(1.2);
+      }
+      to {
+        transform: scale(1.4);
+      }
+    }
+    @keyframes playEffect2 {
+      from {
+        transform: scale(1.2);
+      }
+      to {
+        transform: scale(1.8);
       }
     }
   }

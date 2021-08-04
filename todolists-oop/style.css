@@ -38,10 +38,15 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 200px;
+  padding-top: 100px;
+}
+
+.todo-container .music-video {
+  display: none;
+  margin-bottom: 2rem;
 }
 
 .todo-container .title {
-  margin-top: 100px;
   min-width: 320px;
   max-width: 700px;
   width: 80vw;
@@ -71,7 +76,8 @@ ul {
   margin-top: 12px;
 }
 
-.todo-container .title .more-option {
+.todo-container .title .more-option,
+.todo-container .title .music {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -84,11 +90,13 @@ ul {
   transition: all 0.3s ease;
 }
 
-.todo-container .title .more-option:hover {
+.todo-container .title .more-option:hover,
+.todo-container .title .music:hover {
   background: #d6d6d6;
 }
 
-.todo-container .title .more-option .more-icon {
+.todo-container .title .more-option .more-icon,
+.todo-container .title .music .more-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,11 +105,116 @@ ul {
   padding: 2px;
 }
 
-.todo-container .title .more-option .more-icon li {
+.todo-container .title .more-option .more-icon li,
+.todo-container .title .music .more-icon li {
   width: 5px;
   height: 5px;
   background: #2948ff;
   border-radius: 50%;
+}
+
+.todo-container .title .music {
+  top: 15px;
+  border-radius: 15px;
+  background: #fff;
+  color: #2948ff;
+}
+
+.todo-container .title .music .shadow {
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.todo-container .title .active {
+  background: #2948ff;
+  color: #fff;
+}
+
+.todo-container .title .active i {
+  -webkit-animation: 3s linear 0s infinite rotation;
+          animation: 3s linear 0s infinite rotation;
+}
+
+.todo-container .title .active .shadow {
+  -webkit-animation: 1s ease-in-out 0s infinite alternate playEffect;
+          animation: 1s ease-in-out 0s infinite alternate playEffect;
+}
+
+.todo-container .title .active .shadow:last-child {
+  -webkit-animation: 1s ease-in-out 0s infinite alternate playEffect2;
+          animation: 1s ease-in-out 0s infinite alternate playEffect2;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes playEffect {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+}
+
+@keyframes playEffect {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+}
+
+@-webkit-keyframes playEffect2 {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+}
+
+@keyframes playEffect2 {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
 }
 
 .todo-container .adding {

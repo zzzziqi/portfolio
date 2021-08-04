@@ -20,6 +20,7 @@ class TodoLists {
     this.newData = [];
     this.day = new Date();
     this.date = document.querySelector(".date");
+    this.musicBtn = document.querySelector(".music");
   }
   setTheDay() {
     let whichDay = [
@@ -382,6 +383,12 @@ class TodoLists {
   setInspiration() {
     this.inspiration.innerText = `"${this.inspirationText}"`;
   }
+
+  scaleVideo() {
+    let width = this.date.offsetWidth;
+    let height = (width / 560) * 315;
+    player.setSize((width = `${width}`), (height = `${height}`));
+  }
 }
 
 let todoLists = new TodoLists();
@@ -406,6 +413,17 @@ todoLists.confirmDelete.addEventListener("click", () => {
   todoLists.delete();
 });
 
+todoLists.musicBtn.addEventListener("click", () => {
+  let musicVideo = document.querySelector(".music-video");
+  if (musicVideo.classList.contains("display")) {
+    musicVideo.style = "display:none";
+    musicVideo.classList.remove("display");
+  } else {
+    musicVideo.style = "display:block";
+    musicVideo.classList.add("display");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   todoLists.getInspiration();
   todoLists.setDataToAnItem();
@@ -415,3 +433,40 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("beforeunload", () => {
   todoLists.storeData();
 });
+
+window.addEventListener("resize", () => {
+  todoLists.scaleVideo();
+});
+
+// setting the youtube video
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "360",
+    width: "640",
+    videoId: "5qap5aO4i9A",
+    playerVars: {
+      rel: 0,
+      iv_load_policy: 3,
+      modestbranding: 1,
+      color: "white",
+    },
+    events: {
+      onReady: onPlayerReady,
+      onStateChange: onPlayerStateChange,
+    },
+  });
+  todoLists.scaleVideo();
+}
+
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING) {
+    todoLists.musicBtn.classList.add("active");
+  } else {
+    todoLists.musicBtn.classList.remove("active");
+  }
+}
