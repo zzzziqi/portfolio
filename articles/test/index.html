@@ -1,0 +1,878 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Test 测试</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed56dad-5a35-43b6-b4a6-22d46cea1f46" class="page sans"><header><h1 class="page-title">Test 测试</h1></header><div class="page-body"><h1 id="ad4f9d79-e36b-4bb1-a1bc-e55a9b206f2e" class="">前言</h1><p id="d8c84c34-0ec8-4eae-b15e-091974c962be" class="">这篇文章主要从较为宏观的层面写如何进行单元测试，文中所使用的例子都基于Jest+React testing library。</p><h1 id="6f55cdef-d8e5-443c-b9e6-12c9d653649c" class="">什么是测试</h1><blockquote id="9714f747-f387-4cf5-be60-557e36cfeeb6" class="">测试，指的是通过专门的仪器设备以设计合理的实验方法来获取被测对象的数据，最终将数据与某个标准进行比较进而得出结论。                                                                             —百度百科</blockquote><p id="ad84757c-1b69-44f4-bd33-852190996f15" class="">
+</p><p id="73928fc5-857c-4e3a-85eb-0341fe118863" class="">对于编写程序，测试所指即会缩小很多。因为程序只由两部分组成，数据与函数。数据指的是通过硬件如硬盘或内存等储存的内容，而函数指的是输入数据、处理数据和输出数据的这个过程。编程领域的测试主要关注在函数上，当然，测试也离不开数据的测定，因为函数的三个阶段都是在与数据打交道。</p><p id="5d28ee1b-9979-4fe7-bcb5-5e688d875027" class="">函数的定义与测试的3A模型其实即为相似，AAA (Arrange-Act-Assert)，Arrange准备数据，Act处理数据，Assert判定数据。在接下来的介绍中，我将会以这3A模型为维度将测试进行分别介绍。</p><p id="7a7ca65f-6543-4ddb-941b-e1b2ab0a54ba" class="">
+</p><h1 id="b29828e1-8d20-44f5-8896-ab1eb93cb3b8" class="">测试的组成</h1><h3 id="f74ceb41-22e3-49e6-a6fa-11664fdbe742" class="">Arrange 组织数据</h3><p id="389a78ba-edc3-45e2-b9d3-c8b1f2ccc0bf" class="">在组织数据阶段，为被测函数准备输入数据与mock依赖。输入数据部分根据具体业务进行模拟即可，mock依赖是我们写测试时真正头痛的部分。以模块为边界，可以将依赖进一步划分，外部依赖和内部依赖。</p><p id="888b9af0-dc7b-481f-ba54-058549751903" class="">
+</p><p id="80c6cb60-2373-4e0f-b89a-7ddcbf4e97fb" class="">对于外部模块的依赖，我们可以进一步地细分成四种情况。</p><ul id="2fb1e791-b981-4bf5-a114-1d0d0bcd4355" class="bulleted-list"><li style="list-style-type:disc">依赖对象的方法</li></ul><ul id="f3df934d-07a2-4c53-8fb9-c0105978bb99" class="bulleted-list"><li style="list-style-type:disc">依赖对象的属性</li></ul><ul id="3a08dc4b-3b4b-4be8-a736-200e58d73349" class="bulleted-list"><li style="list-style-type:disc">依赖函数</li></ul><ul id="2e39ade9-ae1b-4d25-981a-afc708cddc13" class="bulleted-list"><li style="list-style-type:disc">依赖变量</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="e5072d69-1c09-495f-bed1-8f17458ff13b"><div style="font-size:1.5em"><span class="icon">⚙</span></div><div style="width:100%">例子：<p id="3d3437a9-8ae4-4c3a-948a-09d371755487" class="">文件结构都一致：</p><figure id="7213f38b-97e7-410e-a9d4-bd569df2b86a" class="image"><a href="Test%20%E6%B5%8B%E8%AF%95%201ed56dad5a3543b6b4a622d46cea1f46/Untitled.png"><img style="width:908px" src="Test%20%E6%B5%8B%E8%AF%95%201ed56dad5a3543b6b4a622d46cea1f46/Untitled.png"/></a></figure><ol type="1" id="bf64ed47-77b3-44cf-b315-18684a956537" class="numbered-list" start="1"><li>被测对象引用的是<strong>外部模块对象的方法</strong><pre id="c73510bb-f6f5-4e11-9e12-d6df1486418f" class="code"><code>// userUtil.js 外部依赖
+export const userUtil = {
+    getUserName() {
+        return &#x27;Bob&#x27;
+    }
+}</code></pre><pre id="02a2a835-2716-428b-b56e-30153f23bdfa" class="code"><code>// user.js 被测函数
+import {userUtil} from &quot;./userUtil&quot;;
+
+export const getUserInfo = () =&gt; {
+    const userName = userUtil.getUserName()
+
+    return {user: {name: userName, age: 18}}
+} </code></pre><p id="57b1f29e-0549-45f7-a51e-4de083b2d695" class="">使用jest.spyOn</p><pre id="e9cdbf41-6f65-4eae-bddb-348752c9f7a9" class="code"><code>// user.test.js
+import {getUserInfo} from &quot;../user&quot;;
+import {userUtil} from &quot;../userUtil&quot;;
+
+describe(&quot;user&quot;, () =&gt; {
+    it(&#x27;should get user info&#x27;, () =&gt; {
+        jest.spyOn(userUtil, &#x27;getUserName&#x27;).mockReturnValue(&#x27;zzq&#x27;)
+
+        expect(getUserInfo()).toEqual({user: {name: &quot;zzq&quot;, age: 18}});
+    })
+});</code></pre></li></ol><ol type="1" id="049f9511-4368-4e19-bc43-292eec2658b3" class="numbered-list" start="2"><li>被测对象引用的是<strong>外部模块对象的属性</strong><pre id="edcb4de9-bd77-4ca5-b00e-c90c90155862" class="code"><code>// userUtil.js 外部依赖
+export const userUtil = {
+    userName: &#x27;Bob&#x27;
+}</code></pre><pre id="1e3e090a-a3b3-4a29-959f-30772245cf99" class="code"><code>// user.js 被测函数
+import {userUtil} from &quot;./userUtil&quot;;
+
+export const getUserInfo = () =&gt; {
+    const userName = userUtil.userName;
+
+    return {user: {name: userName, age: 18}}
+}</code></pre><p id="b4992042-2f0f-4c07-b1e9-55c955c835e9" class="">使用jest.spyOn + 将原依赖模块的对象属性更改为等价的方法</p><pre id="fc2e74cd-2403-4a62-9bfa-50cb1c191c77" class="code"><code>// userUtil.js 外部依赖
+export const userUtil = {
+    get userName() {
+        return &quot;Bob&quot;
+    }
+}</code></pre><pre id="af4d745e-6084-4df2-b194-e38feb7f8a17" class="code"><code>// user.test.js
+import {getUserInfo} from &quot;../user&quot;;
+import {userUtil} from &quot;../userUtil&quot;;
+
+describe(&quot;user&quot;, () =&gt; {
+    it(&#x27;should get user info&#x27;, () =&gt; {
+        jest.spyOn(userUtil, &quot;userName&quot;, &quot;get&quot;).mockReturnValue(&quot;zzq&quot;)
+
+        expect(getUserInfo()).toEqual({user: {name: &quot;zzq&quot;, age: 18}});
+    })
+});</code></pre><p id="c0d7165c-1e37-451a-ab1b-792ded0bc459" class="">这种对于属性的mock比较少见。</p><p id="365f4553-91a5-4e48-8f1e-37834efd277b" class="">
+</p></li></ol><ol type="1" id="ffb7034e-b653-4921-be44-4f97c1615fca" class="numbered-list" start="3"><li>被测对象引用的是<strong>外部模块的函数</strong><pre id="05909fd4-94eb-44e7-bc05-607e60dd2e64" class="code"><code>// userUtil.js 外部依赖
+export const getUserName = () =&gt; ({userName: &#x27;Bob&#x27;})</code></pre><pre id="a1403403-b78c-4f8c-8379-02683acacd2b" class="code"><code>// user.js 被测函数
+import {getUserName} from &quot;./userUtil&quot;;
+
+export const getUserInfo = () =&gt; {
+    const userName = getUserName().userName
+
+    return {user: {name: userName, age: 18}}
+}</code></pre><ol type="a" id="61ecb090-cce6-4016-a6da-e384170da58f" class="numbered-list" start="1"><li>使用*星号将函数以模块的形式引入，再使用jest.spyOn来mock这个模块的函数<pre id="dcbb4806-a51e-4ad2-b439-8d563cd756f7" class="code"><code>// user.test.js
+import {getUserInfo} from &quot;../user&quot;;
+import * as userUtil from &quot;../userUtil&quot;;
+
+describe(&quot;user&quot;, () =&gt; {
+    it(&#x27;should get user info&#x27;, () =&gt; {
+        jest.spyOn(userUtil, &quot;getUserName&quot;).mockReturnValue({userName: &#x27;zzq&#x27;})
+
+        expect(getUserInfo()).toEqual({user: {name: &quot;zzq&quot;, age: 18}});
+    })
+});</code></pre></li></ol><ol type="a" id="b3f23132-d18d-47ba-a913-a5ea8059f6c5" class="numbered-list" start="2"><li>使用jest.mock来mock掉整个模块+再通过mockReturnValue来mock这个函数的返回<pre id="a7882beb-6a4a-4828-9e66-dcb3a135ac20" class="code"><code>// user.test.js
+import {getUserInfo} from &quot;../user&quot;;
+import * as userUtil from &quot;../userUtil&quot;
+
+jest.mock(&quot;../userUtil&quot;)
+describe(&quot;user&quot;, () =&gt; {
+    it(&#x27;should get user info&#x27;, () =&gt; {
+        userUtil.getUserName.mockReturnValue({userName: &#x27;zzq&#x27;})
+
+        expect(getUserInfo()).toEqual({user: {name: &quot;zzq&quot;, age: 18}});
+    })
+});</code></pre></li></ol><ol type="a" id="676efd21-ed94-4fda-ab4b-a0e989fd8b25" class="numbered-list" start="3"><li>使用jest.mock来mock掉整个模块+jest.requireActual获取真实返回+mock部分返回<pre id="951bdbd3-97cb-4a6e-829b-b2680f3717d4" class="code"><code>// user.test.js
+import {getUserInfo} from &quot;../user&quot;;
+
+jest.mock(&quot;../userUtil&quot;, ()=&gt;{
+    const originalModule = jest.requireActual(&quot;../userUtil&quot;);
+
+    return {
+        __esModule: true,
+        ...originalModule,
+        getUserName : () =&gt; ({userName: &#x27;zzq&#x27;})
+    }
+})
+
+describe(&quot;user&quot;, () =&gt; {
+    it(&#x27;should get user info&#x27;, () =&gt; {
+        expect(getUserInfo()).toEqual({user: {name: &quot;zzq&quot;, age: 18}});
+    })
+});</code></pre></li></ol></li></ol><ol type="1" id="24c3b382-2c97-40d0-ba62-97bbabb603af" class="numbered-list" start="4"><li>被测对象引用的是<strong>外部模块的变量</strong><pre id="41a5e49c-cad4-4e44-9e3f-81727491cfd0" class="code"><code>// userUtil.js 外部依赖
+export const name = &quot;Bob&quot;</code></pre><pre id="54fa8d4b-8c73-499d-b672-0f2d4eacbee5" class="code"><code>// user.js 被测函数
+import {name} from &quot;./userUtil&quot;;
+
+export const getUserInfo = () =&gt; {
+    return {user: {name: name, age: 18}}
+}</code></pre><p id="536719d1-6370-4c75-993e-755023038652" class="">使用Object.defineProperty进行mock变量</p><pre id="c41028d3-1917-4284-9989-f1e7ac78db09" class="code"><code>// user.test.js
+import {getUserInfo} from &quot;../user&quot;;
+import * as userUtil from &quot;../userUtil&quot;;
+
+const originName = userUtil.name;
+
+describe(&quot;user&quot;, () =&gt; {
+		// 及时重置数据，避免污染
+    afterEach(() =&gt; {
+        Object.defineProperty(userUtil, &#x27;name&#x27;, {
+            value: originName,
+            writable: true,
+        })
+    })
+
+    it(&#x27;should get user info&#x27;, () =&gt; {
+        Object.defineProperty(userUtil, &#x27;name&#x27;,{
+            value: &#x27;zzq&#x27;,
+            writable: true
+        })
+
+        expect(getUserInfo()).toEqual({user: {name: &quot;zzq&quot;, age: 18}});
+    })
+});</code></pre></li></ol></div></figure><p id="accb871c-98d1-4d00-8aa2-0f714be3678f" class="">
+</p><p id="09c40596-db84-42e7-91f1-1450aa73531a" class="">对于内部模块的依赖，我们可以通过将依赖改为参数对被测函数进行注入。</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f4b02000-41de-4d7f-bc48-f82679fac41f"><div style="font-size:1.5em"><span class="icon">⚙</span></div><div style="width:100%">例子：<pre id="5fc272dc-4159-4b49-b194-315526af4a44" class="code"><code>function getPlanet () {
+  return &#x27;world&#x27;;
+}
+
+export default function getGreeting (_getPlanet = getPlanet) {
+  return `hello ${_getPlanet()}!`;
+}</code></pre><pre id="1b57ebe6-9f50-440b-9c12-e4a6fb1dc4c2" class="code"><code>import getGreeting from &#x27;../greeting.dependency-injection&#x27;;
+
+describe(&#x27;getGreeting&#x27;, () =&gt; {
+  it(&#x27;默认值&#x27;, () =&gt; {
+    expect(getGreeting()).toBe(&#x27;hello world!&#x27;);
+  });
+
+  it(&#x27;输出 mars&#x27;, () =&gt; {
+    expect(getGreeting(() =&gt; &#x27;mars&#x27;)).toBe(&#x27;hello mars!&#x27;);
+  });
+
+  it(&#x27;输出 jupiter&#x27;, () =&gt; {
+    expect(getGreeting(() =&gt; &#x27;jupiter&#x27;)).toBe(&#x27;hello jupiter!&#x27;);
+  });
+
+  it(&#x27;回到默认值&#x27;, () =&gt; {
+    expect(getGreeting()).toBe(&#x27;hello world!&#x27;);
+  });
+});</code></pre></div></figure><p id="8c49203a-8d25-4475-8167-67b05462a0c3" class="">为了测试而修改被测代码是我们不希望发生的，当这种情况发生时，我们可以再思考一下</p><ul id="47cd3919-3119-4cc7-a84d-f5f262e5c7bc" class="bulleted-list"><li style="list-style-type:disc">这个测试真的需要这么关注内部的实现细节吗？</li></ul><ul id="5a942ebb-4b16-4f2b-a9d6-d8fa4ee0d225" class="bulleted-list"><li style="list-style-type:disc">这个被测模块的是否可以被重构？</li></ul><p id="ff75d8ed-6c52-401e-8300-a27c7238f529" class="">
+</p><p id="c4669bf8-9e49-4625-bae2-3ff10ce2c831" class="">对于Arrange阶段，上面的案例更接近逻辑的测试，数据准备阶段还有与redux数据管理相关的Provider准备，与ui相关的ThemeProvider的准备，不在此进行展开了。</p><p id="4731bb3d-9377-43d5-9889-b06de2cefc5e" class="">
+</p><h3 id="7e5eacb2-9dbc-4e98-a4a7-fb18e5e84378" class="">Act 处理数据</h3><p id="b246b01a-b31a-4439-a878-f437579a3d8c" class="">在处理数据阶段，我主要介绍三个React-testing-library提供的重要的函数</p><ul id="c62ab8c3-3e86-45a6-92a2-ba7595c0493d" class="bulleted-list"><li style="list-style-type:disc">render：render接收一个react组件作为参数，对其进行渲染，形成HTML DOM树，然后开发者可以对此进行元素是否存在的判断和与之交互，从而模拟真实用户和软件交互的场景。</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bae52995-dcee-4ef3-a095-8bff0768cb20"><div style="font-size:1.5em"><span class="icon">⚙</span></div><div style="width:100%">例子：<pre id="3876469e-70db-4606-8563-f025f61798b3" class="code"><code>// App.js
+import React from &quot;react&quot;;
+
+const App = () =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default App;</code></pre><pre id="b54a2db5-16ee-4262-ab91-c031bb3f5779" class="code"><code>// App.test.js
+import React from &#x27;react&#x27;;
+import { render, screen } from &#x27;@testing-library/react&#x27;;
+ 
+import App from &#x27;./App&#x27;;
+ 
+describe(&#x27;App&#x27;, () =&gt; {
+  test(&#x27;renders App component&#x27;, () =&gt; {
+    render(&lt;App /&gt;);
+ 
+    expect(screen.queryByText(/Hello World!/)).toBeDefined();
+  });
+})</code></pre></div></figure><p id="78db4ab7-c14b-4f71-9b83-a9cb38428280" class="">
+</p><ul id="ac43731c-4418-49bc-adfb-26902b8443e5" class="bulleted-list"><li style="list-style-type:disc">screen函数为我们提供了获取html元素的能力</li></ul><p id="4ac77ca6-c771-487a-8d1c-142741d65be9" class="">我们可以通过各种元素的属性获取它如testId，role，text等，另外获取元素的方式还分成了三种：</p><figure id="99d94451-5d47-4363-aa51-7ecc8bd49ffc" class="image"><a href="Test%20%E6%B5%8B%E8%AF%95%201ed56dad5a3543b6b4a622d46cea1f46/Untitled%201.png"><img style="width:764px" src="Test%20%E6%B5%8B%E8%AF%95%201ed56dad5a3543b6b4a622d46cea1f46/Untitled%201.png"/></a><figcaption>from React Testing Library</figcaption></figure><p id="c8ea3ee8-4da0-427c-863b-280116f837c4" class="">React Testing Library的指导原则是</p><blockquote id="07e2c20f-4508-4202-96e8-4a8f3c1466d0" class="">The more your tests resemble the way your software is used, the more confidence they can give you.</blockquote><p id="11b99362-e7a6-42c6-a4f9-9422937dbdfa" class="">
+</p><p id="13f6f567-ed08-4ec8-9766-8a760b9074da" class="">因此我们应该首先尝试用 <code>getBy</code> 来进行一开始渲染页面时元素的获取，其次采用 <code>await</code>加<code>findBy</code> 进行异步内容的获取，最后再通过 <code>queryBy</code> 这种接近程序员思维的方式进行获取。当获取完元素后，我们可以对这些元素进行下一步的操作或者判断</p><p id="a131a950-baf5-4c21-afb1-56fd33b4310a" class="">
+</p><ul id="9b3db53e-4d8c-460d-8144-e2a581c1247a" class="bulleted-list"><li style="list-style-type:disc">fireEvent函数接受两个参数，html元素和事件，它帮助测试者与render生成的HTML DOM树进行交互</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="49a1d606-2368-4cfe-bf11-727b2aeefb13"><div style="font-size:1.5em"><span class="icon">⚙</span></div><div style="width:100%">例子<pre id="c1528700-0b5f-43ef-abbd-dc48e0e2057b" class="code"><code>// App.js
+import React from &quot;react&quot;;
+
+const App = () =&gt; {
+    return (
+        &lt;div&gt;
+            &lt;input type=&quot;text&quot;/&gt;
+        &lt;/div&gt;
+    );
+};
+
+export default App;</code></pre><pre id="84f1fa42-21a9-49c5-a9b7-4ec04a2d2c75" class="code"><code>// App.test.js
+import React from &#x27;react&#x27;;
+import {fireEvent, render, screen} from &#x27;@testing-library/react&#x27;;
+
+import App from &#x27;./App&#x27;;
+
+describe(&#x27;App&#x27;,  () =&gt; {
+    test(&#x27;renders App component&#x27;,async () =&gt; {
+        render(&lt;App/&gt;);
+
+        fireEvent.change(screen.getByRole(&quot;textbox&quot;), {
+            target: {value: &#x27;test&#x27;},
+        })
+
+        expect(screen.getByRole(&quot;textbox&quot;).value).toBe(&quot;test&quot;);
+    });
+})</code></pre></div></figure><p id="3dd7da31-38c6-4779-8518-d0a3184170d5" class="">
+</p><h3 id="29a69e8d-f67f-49d9-adb3-3cfc222c574a" class="">Assertion 断言数据</h3><p id="20ff81e3-9097-4343-9432-bde1b9c2c21a" class="">在判断数据阶段，主要介绍的就是matcher了，matcher可以帮助我们以不同的方式去断言我们的结果，通过expect函数，它会返回一个expectation objects，然后我们再通过进一步调用matchers。</p><p id="f88d067d-3070-4448-8456-28d1eb3e5c25" class="">常用的matcher有</p><ul id="0c3a7f6b-ab15-443c-a4b1-73d8a18fb97f" class="bulleted-list"><li style="list-style-type:disc">toBe</li></ul><ul id="7a32f3e8-07cd-475e-b7be-ba7d9be51cf2" class="bulleted-list"><li style="list-style-type:disc">toEqual</li></ul><ul id="adf91fe3-cce1-4688-b646-be51286ce022" class="bulleted-list"><li style="list-style-type:disc">toContain</li></ul><ul id="8d9852c4-0e1e-4354-89e1-392c60b7d791" class="bulleted-list"><li style="list-style-type:disc">toBeFalsy</li></ul><ul id="9510197e-fb13-4efa-b2b4-3afa16735354" class="bulleted-list"><li style="list-style-type:disc">toBeGreaterThan</li></ul><ul id="94ca2d48-8bfa-4d71-97c3-f26e440aa823" class="bulleted-list"><li style="list-style-type:disc">toMatch</li></ul><ul id="00d9a3d5-99bf-4e54-9641-ef4b997f86d4" class="bulleted-list"><li style="list-style-type:disc">…</li></ul><p id="72de0e21-82a1-4855-9cc2-165e40fa7168" class="">结合第三方的库如<strong>@testing-library/jest-dom</strong>，它为我们提供了更多的关于DOM的Matcher API，常见的有</p><ul id="0bc9f6d0-833a-4b41-9727-08023f86ab8c" class="bulleted-list"><li style="list-style-type:disc">toBeInTheDocument</li></ul><ul id="10835fa8-1b27-4b2f-b29c-24841da28b3e" class="bulleted-list"><li style="list-style-type:disc">toBeVisible</li></ul><ul id="9e651041-c2ed-435e-af7b-9daa36eb9d0d" class="bulleted-list"><li style="list-style-type:disc">toContainHTML</li></ul><ul id="c32143ae-b111-4d4f-82d3-b85bd81f08ce" class="bulleted-list"><li style="list-style-type:disc">…</li></ul><h1 id="fb0ee3ff-f712-41e3-86fb-29cbd4bf20d1" class="">总结</h1><p id="dbbb2b5b-825e-4502-8cd1-10a9a3ca57f4" class="">本文以3a测试模式为依据，简单介绍了自己在写react组件测试过程中遇到的一些概念。通过写这篇文章更近一步让我意识到测试是个极其庞大的领域，这篇文章主要关注在以Jest+React Testing Library为背景的单元测试上。日后待接触更多的测试如集成测试、E2E测试、UI测试等，将再尝试进行其它测试内容的介绍。感谢你的阅读，欢迎指出我的错误和与我讨论！</p><p id="3479b27f-6308-4017-b23f-8b24db6c43c4" class="">
+</p><h1 id="bf416755-5e30-4ef8-a614-78d01665e3ca" class="">参考</h1><p id="deef8f70-628e-471f-bd90-e37c4d1dc3b2" class=""><a href="https://github.yanhaixiang.com/jest-tutorial/">Jest实践指南</a></p><p id="5848fadb-1b0c-4d88-aa70-66283a43ee72" class=""><a href="https://jestjs.io/docs/jest-object">Jest官网</a></p><p id="c15679ce-520c-46fe-93b8-8579034a0c34" class=""><a href="https://testing-library.com/docs/react-testing-library">React Testing Library官网</a></p><p id="1d7021e4-123f-4d76-a505-575c180112c4" class=""><a href="https://www.bilibili.com/video/BV1AF411s78P?spm_id_from=333.337.search-card.all.click">十分钟学会编程的本质</a></p><p id="9bba859a-79ee-433e-8752-64a0de082a8e" class=""><a href="https://juejin.cn/post/6907052045262389255#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%94%99%E8%AF%AF%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F">React Testing Library使用总结</a></p><p id="97d70214-a019-4207-8d9a-f2f63f8639d3" class="">
+</p></div></article></body></html>

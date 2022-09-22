@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Agile 敏捷</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dc1560f3-cf82-4282-b8e7-a92aef618973" class="page sans"><header><h1 class="page-title">Agile 敏捷</h1></header><div class="page-body"><p id="1eac5b88-ffea-46dd-bdcf-5e11c913b5d5" class="">
+</p><h1 id="e947b372-d189-4f63-9861-eed5fd825cd9" class="">前言</h1><p id="96e5279f-0702-4e01-9ada-6818aca05069" class="">在这个文章中，我主要以我对敏捷的理解对其进行描述，对于一些敏捷的定义可能会有偏颇和遗漏，欢迎与我讨论或提出反馈，让我”敏捷”地开发出这篇关于敏捷的文章。</p><p id="62a582bf-d17c-4a89-bcc3-63b35844daad" class="">
+</p><h1 id="f9e1ae62-bdad-4b3a-9500-34c1d021431f" class="">什么是敏捷 </h1><p id="4a68492d-6b32-4a95-a005-e4f1a876de41" class="">敏捷，指的是使用者以高的效率低的成本为自己或他人提供价值。当一个人抱着这样的目的并为此做出行动，提供价值时，他就是敏捷的。在软件开发的领域，由于市场的变化、技术的变化、商业策略的变化等，需求的变化时常发生，因此低成本地快速适应变化是敏捷在软件开发行业内的核心表现。</p><p id="46085f31-e896-470c-af7f-a62669b2ea30" class="">
+</p><p id="ef5e637a-5acc-4509-9f10-154d0857b81b" class="">经过在软件行业耕耘许久的前辈们的实践，他们总结出了一些通用的实践，包括manifesto宣言、principles原则以及ceremonies会议等。当这些实践帮助我们在当前的情况下更快更好地达成目的时，那么这些个实践就是敏捷的。</p><p id="191a8771-5092-4494-8223-771fda91b8f5" class="">
+</p><h1 id="e3504744-c4fd-4e67-bd90-2a79e0dbbda1" class="">从敏捷实践看敏捷</h1><p id="ffc8a44d-d324-48d2-ab1c-4f53a0d1e600" class="">在软件开发领域，当开发一款产品时，进行快速的价值交付需要考虑什么关键的要素呢？前辈总结出来的敏捷实践又怎么帮助我们对这些要素进行优化呢？</p><p id="27ccba17-344a-457a-a241-adb098b0bccd" class="">
+</p><blockquote id="4f4c3325-0d8e-4252-ba1b-d80bb1532813" class=""><strong>故事板 story board/看板 kanban board帮助聚焦价值与提升效率</strong></blockquote><p id="9bc0b9aa-9db4-4b80-9cd9-c501d281cb3a" class="">故事板story board或看板kanban board时常被用于进行需求的管理与描述。它们一般是以as…, I want …, so that …的模版进行需求的叙事性表述。通过故事的内容，开发者可以更好地理解相关工作的上下文、验收标准。这最终将导致团队内沟通的成本被降低，开发的效率被增高与不必要的工作被减少。这个实践方法不仅可以用于具体的软件开发中，对于其他的一切需求进行故事化，也可以给使用者在短时间内了解大概的上下文与接受的标准。</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="142fd804-9a70-4691-be54-2f20a5d16865"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">例如：<p id="a9e39ce0-b587-4bb0-9a13-9165877b104d" class="">as… 作为数字化方案提供商</p><p id="4c672b3f-cdc1-497c-a23c-0b387175cf5d" class="">I want/need to… 我需要以更低的成本为客户更快地提供更有价值的数字解决方案</p><p id="c490efe8-c184-4012-a283-bdf4a09210ab" class="">so that… 我可以在商业上获得竞争力</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6cf66463-a0cc-4ffa-916f-cbc87483d3d5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">又如：<p id="2579c4d9-56df-4699-b4c7-d78832b2f7f1" class="">as… 作为一个thoghtworks员工</p><p id="b3ff6b14-40c0-47bd-bef8-c85a73a3360c" class="">I want/need to… 我需要写出一篇关于敏捷的文章</p><p id="11fbcca6-790c-4935-b509-bc40f5312488" class="">so that… 读者在阅读完文章后，可以对敏捷有大体正确的印象</p></div></figure><p id="539273e0-e01a-4e33-891b-bb16cbcc6047" class="">
+</p><p id="16bf1235-86ed-4eb3-8c25-3fc68e6d1b08" class="">在创建故事时需要注意两点</p><ul id="848911b6-f40f-455a-a331-73de8956ba66" class="bulleted-list"><li style="list-style-type:disc">不同的故事定义将决定不同的验收标准，如当故事最终提供的价值为“读者在阅读完文章后，可以对敏捷有大体正确的印象”时，验收故事的标准主要考虑的即为读者；而当故事最终提供的价值为“帮助自己更好地梳理知识”时，所考量的主要就为作者了。对于不同的验收标准，对“产品”所进行的开发方式也会有所不同。</li></ul><ul id="bf16d755-617a-40b1-9759-ff0bf4369737" class="bulleted-list"><li style="list-style-type:disc">故事在开始时是较为笼统的，但在持续的迭代中，故事所描述的需求会变得越来越清晰。而且我们无法避免一开始笼统的故事描述，由于已有的事实：<ul id="fdfc344b-9423-489a-8d7d-c49fc19ac791" class="bulleted-list"><li style="list-style-type:circle">获得所有的需求在一开始是不可能的。</li></ul><ul id="1de9fafa-f8e3-4a70-bce5-e456d3019865" class="bulleted-list"><li style="list-style-type:circle">细节的需求是一定会改变的。</li></ul><ul id="96867f94-269f-4c58-ac28-76f68f11476f" class="bulleted-list"><li style="list-style-type:circle">总是会有更多超过给定时间和金钱限制的事情需要完成。</li></ul></li></ul><p id="2ca18c7e-4893-4a41-bab0-d69114f0bdc8" class="">
+</p><blockquote id="6059570d-0a10-4acc-be30-0917989860fb" class=""><strong>会议 ceremonies帮助达成目标</strong></blockquote><p id="d7faaf56-f3c5-4c58-a641-77c510bbca61" class="">为了快速地提供符合客户要求的价值，敏捷的实践会将一整个长的产品开发周期会被细分成更小的周期。这个更小的周期在不同的敏捷框架中会被称为sprint或者iteration。我们在下文统一使用迭代进行表示。而每一个迭代都可以通过PDCA（Plan-Do-Check-Act）循环进行再次细分。我将基于这个PDCA循环介绍敏捷实践中的会议，从而让我们更好地了解到会议使用的时机和目的</p><p id="a2cc4b57-8c97-4e41-b7e2-aa3bda817d74" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="886fd46a-bfd9-4dcd-8983-56dbd41c3ae3"><div style="font-size:1.5em"><span class="icon">🧠</span></div><div style="width:100%"><strong>IPM（Iteration Planning Meeting）</strong><p id="3a808b71-1feb-4e0e-a095-1384a80c8f92" class="">在Plan阶段，即迭代刚开始时，团队的各种角色包括BA（Business Analyst）、PO（Product Owner）、TL（Tech Lead）等会聚在一起对客户的需求进行分析与工作量评估，这个会议被称为IPM（iteration planning meeting）这个会议主要决定了三个事情：</p><ul id="54f93c71-4a0c-4d77-a756-60b11b6b0679" class="bulleted-list"><li style="list-style-type:disc">为什么这个迭代有价值（目标），</li></ul><ul id="32da9910-66d6-4aba-a1f5-f5d4ce733bfc" class="bulleted-list"><li style="list-style-type:disc">这个迭代能完成什么（范围），</li></ul><ul id="460a2b4f-edfd-431f-be36-097e33eab27f" class="bulleted-list"><li style="list-style-type:disc">如何完成所选工作（怎样完成）。</li></ul><p id="4ff5bbf9-e3bb-4043-9fd0-653db9bbe8c1" class=""><strong>通过这个会议，我们可以确定提供给客户的产品是有价值的。</strong></p><p id="e1ba929a-c0df-4fce-918d-9a6a41add9db" class="">
+</p><p id="b48cae42-1b6c-4d40-9678-406698b46f24" class="">在Yunzhi Liu在博客大赛《从迭代计划会看敏捷实践》的博客中提到，这个IPM可以根据情况再细分成两个会议Iteration Planning Meeting和Iteraction Kick-off Meeting，IPM让PO、BA、TL来决定业务优先级与规划迭代，IKM来帮助团队更好地了解业务上下文来讲行开发，其目的是为了进一步提升团队的开发效率。</p><p id="6960216a-7061-453a-87de-228ce3ccb8b5" class="">我认为这种细分法可以根据团队的构成来决定是否采用。当团队中有较多的junoir时可以通过将细分IPM以节省他们花费在确定需求优先级与讨论技术方案的时间。而在有较多的senior的时候，将会议细分，则会让开发花费更多的时间来获取业务信息与阐明细节。 回到敏捷，即选择真正可以提升效率的方式去使用会议。</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2241226d-eedc-4de1-b954-d94d0ea99eba"><div style="font-size:1.5em"><span class="icon">🗣</span></div><div style="width:100%"><strong>Standup</strong><p id="1c27a780-2caa-400f-9bbe-fbebfa1ed05e" class="">在Do阶段，在定下了迭代的目标、范围与如何完成工作之后，我们进入开发的流程。standup是一个短的非正式的会议让团队的成员更新他们自己的昨天的工作与其今天的安排。这个会议帮助成员们对项目的情况保有相同的理解。<strong>通过这个会议，我们可以减少不必要的重复工作的进行，扫除开发过程中的障碍，让交付的效率更高。</strong></p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="61dcb17a-8d77-404c-a284-6a0405403c35"><div style="font-size:1.5em"><span class="icon">🎦</span></div><div style="width:100%"><strong>Showcase</strong><p id="931ebaf9-9d76-4eb3-8efe-fd994b3c75c0" class="">来到check阶段，当开发团队完成了当前迭代的开发任务后，在迭代结束前，团队会举行showcase会议并邀请客户参与。在会议上 ，团队将新的产出进行展示以及时获得客户的反馈。<strong>尽早让客户了解当前产品的状态并获得反馈，可以让产品的交付更加符合客户的要求</strong>。</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="08ab070d-eaab-469f-b11b-2753054d3910"><div style="font-size:1.5em"><span class="icon">💬</span></div><div style="width:100%"><strong>Retrospective</strong><p id="890bcf05-84bc-4278-b912-b886bd494a67" class="">retrospective会议发生在check和act阶段。在迭代结束时，团队会在这个会议上对这个迭代的执行对于效率、质量、成本等进行反思并提出反馈，最后根据这些反思及反馈提出相应的行动在下一个迭代进行运用。<strong>通过这个会议，我们可以帮助团队持续成长和提高团队效率。</strong></p></div></figure><p id="f28fbdd0-20eb-4100-838a-216981232333" class="">
+</p><p id="dc0d4312-f249-43f4-8fe9-b1415372d7a5" class="">还有很多其他的会议如Dev Huddles, Analysis等，而根据敏捷框架的不同，会议所关注的重点和形式也会有所不同，但我们只需要记住，<strong>会议不是最终目的，会议是为客户更快更好地传递价值这个目的的手段</strong>。</p><p id="48590056-f64c-4b7f-b9ec-0ae9a7dc3764" class="">
+</p><blockquote id="4c5d5201-990d-4c10-893c-fa8238467d4d" class=""><strong>特定于开发人员的实践 developer-specific practices帮助提升代码质量</strong></blockquote><p id="7ee382d0-0b36-46c1-8a9b-8ef0a8bc5dcf" class="">敏捷的思想不仅可以被应用在更宏观的项目管理上，如上面提到的各个会议，在软件开发的过程中，它也处处可见。敏捷开发实践有TDD, pair programming, refactoring, continuous integration 和 continuous delivery等。这些实践的目的是为了以更低成本更快地产出更加有质量的软件，进而为客户提供价值 。</p><p id="34130e5d-4ece-4c3c-9452-09ea87ef43e3" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="36e638b1-8925-4147-8a5d-ce44557d8045"><div style="font-size:1.5em"><span class="icon">🚥</span></div><div style="width:100%"><strong>TDD（Test Driving Development）</strong><p id="20e489c9-68d8-4747-ae4e-7232eda057d8" class="">测试驱动开发，开发者通过先写测试，强迫自己从结果反向推导业务代码的内容，以促进只写必要的代码。<strong>通过这种方式，有利于后期产品的快速调整，进而适应市场</strong>。</p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2e1198f8-990f-45d0-84bd-9f937a1bd6be"><div style="font-size:1.5em"><span class="icon">🤝</span></div><div style="width:100%"><strong>Pair programming</strong><p id="1e8b4ea2-d72d-4a10-ab5f-bbf9ff51ca32" class="">结对编程，两人以合作的方式，使用一台机器进行代码的书写。<strong>通过这种方式，提高了反馈的速度，进而提升了代码的质量，也为后期的快速调整带来可能。</strong></p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="909067b9-5e3c-4b65-a817-46abbd5916e6"><div style="font-size:1.5em"><span class="icon">🛠</span></div><div style="width:100%"><strong>Refactoring</strong><p id="332f3f29-4a3c-49ce-8edd-04ad30bffe10" class="">重构，通过经常对代码进行重构，<strong>可以帮助开发者更快地读懂代码并在此基础上进行新功能的添加。</strong></p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="83ae9500-b9f9-42ae-baa1-3f5ca4abc8fa"><div style="font-size:1.5em"><span class="icon">➡️</span></div><div style="width:100%"><strong>Continuous integration</strong><p id="4f9b7308-a93f-46b5-b0d0-c80af257c4dd" class="">持续集成，指的是尽早地将每个人的代码融合到一起，通过这种方式，<strong>它可以帮助我们尽早地发现代码冲突并解决它。</strong></p></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c7e9761f-a521-4af5-bc03-4bc1551aea52"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%"><strong>Continuouse delivery</strong><p id="94526e5e-dc3e-4dff-8deb-09712b4f2a04" class="">持续交付，指的是尽早将代码部署在生产环境中，<strong>以此为客户传递真正的价值。</strong></p></div></figure><p id="a66b2adc-b0f7-4a13-8b83-4bd15c9d4faf" class="">
+</p><h1 id="c688e229-9625-4202-a084-12515c60d38c" class="">敏捷宣言 Agile manifesto</h1><p id="ae0bf61f-2f9d-4095-abdc-8bbea7c81009" class="">为了以更简洁易记的方式表明了敏捷的价值观，并以此价值观进而决定其行为，最终指导达成敏捷目标。在2001年，敏捷联盟（ The Agile Alliance ）制定并发布了《敏捷宣言》，</p><blockquote id="c92a91f3-0a62-4962-b39d-dd4c312cf74e" class="">个体和互动高于流程和工具，<p id="77ff0082-b6b1-4728-9818-6156c1a22ea7" class="">工作的软件高于详尽的文档，</p><p id="ce5244ef-d802-4fc9-b5b0-e6da7edb625f" class="">客户合作高于合同谈判，</p><p id="c9082732-2d03-4ff4-8452-d350dcfcefa7" class="">响应变化高于遵循计划。</p></blockquote><h1 id="21c6f2a0-78e2-4831-a6a3-c182806bb984" class="">总结</h1><p id="cc11263c-7d2a-44db-ad9b-bf9f8b0b37cf" class="">关于敏捷还有很多相关的名词，例如敏捷开发12原则、Scrum、XP、SAFe、Lean等，这些名词在了解敏捷的目标与价值观后，都十分容易理解与掌握。总而言之，敏捷是一种思维，当我们尝试以尽可能高效的方式产出质量高的内容时，我们就在敏捷中，而尝试的这些方式即被称之为敏捷实践。</p><p id="1b69c93c-7349-4983-9551-cdf80e9f95ad" class="">
+</p><h1 id="e07b1a5b-3500-4cca-bc22-b4cfc8a7ec3b" class="">参考</h1><p id="0a7e19e6-c8ea-4b5c-b57c-07740fef3f02" class=""><a href="https://campus.thoughtworks.net/learn/course/11/tw-agile-delivery-all-roles">TW Agile Delivery</a></p><p id="6f01df66-77c7-45ed-a288-6ed4ae79467a" class=""><a href="https://mail.google.com/mail/u/0/#search/%E4%BB%8E%E6%95%8F%E6%8D%B7/FMfcgzGpGddlbCVxmCHJsckMsDzNqrQb">从迭代计划会看敏捷实践</a></p><p id="645ddc22-2bff-46fb-a91a-aebc9f281967" class=""><a href="https://central.thoughtworks.net/home/ls/community/china-community/post/5128712154382336">大咖 「说透XP」 系列之《Thoughtworks Way of Working 究竟是什么？》 - 上</a></p><p id="0918868e-3d5c-474a-9ef3-c513175081d0" class=""><a href="https://central.thoughtworks.net/home/ls/community/china-community/post/6110312182710272">大咖 「说透XP」 系列之《Thoughtworks Way of Working 究竟是什么？》 - 下</a></p></div></article></body></html>
